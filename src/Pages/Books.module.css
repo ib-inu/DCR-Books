@@ -1,0 +1,38 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  padding: 10px 20px;
+}
+.userIcon {
+  cursor: pointer;
+  color: aliceblue;
+
+  margin-top: 10px;
+}
+
+.searchBar {
+  padding: 7px;
+  width: 30vw;
+  max-width: 300px;
+}
+.searchBar input {
+  padding: 10px;
+  background-color: rgb(232, 232, 232);
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  height: 120%;
+  width: 100%;
+}
+
+.content {
+  padding: 5vw 20vw;
+}
+
+.welcome {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+}
