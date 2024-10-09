@@ -5,7 +5,8 @@
   background-repeat: repeat-y;
   background-attachment: fixed;
   filter: blur(5px);
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   top: 0;
   left: 0;
   right: 0;
@@ -14,7 +15,7 @@
 }
 .background::after {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -24,7 +25,6 @@
 }
 
 .container {
-  position: relative;
   z-index: 1;
   padding-bottom: 20px;
   min-height: 100vh;
