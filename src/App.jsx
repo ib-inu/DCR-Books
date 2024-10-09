@@ -1,64 +1,88 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Homepage from "./Pages/HomePage"
-import Overview from "./Pages/Overview"
-import About from "./Pages/About"
-import Contribute from "./Pages/Contribute"
-import Books from "./Pages/Books"
-import BookDetails from "./Pages/BookDetails"
-import Profile from "./Pages/Profile"
-import { useState } from "react"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import MainPage from "./Pages/mainpage/MainPage"
+import Homepage from "./Pages/mainpage/homepage/HomePage"
+import Overview from "./Pages/mainpage/overview/Overview"
+import About from "./Pages/mainpage/about/About"
+import Contribute from "./Pages/mainpage/contribute/Contribute"
+import BookDetails from "./Pages/bookdetails/BookDetails"
+import Books from "./Pages/books/Books"
+import { BooksProvider } from "./context/BooksContext"
+import { QueryClient, QueryClientProvider } from "react-query"
+import { ReactQueryDevtools } from 'react-query/devtools'
+import Profile from "./Pages/userprofile/Profile"
+import ErrorMsg from "./ErrorMsg"
 
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+    },
+    errorElement: <ErrorMsg />
+  }
+})
+
+
+const router = createBrowserRouter([
+  {
+    element: <MainPage />,
+    children: [{
+      path: "/",
+      element: <Homepage />,
+      errorElement: <ErrorMsg />
+    },
+    {
+      path: "/overview",
+      element: <Overview />,
+      errorElement: <ErrorMsg />
+    },
+    {
+      path: "/about",
+      element: <About />,
+      errorElement: <ErrorMsg />
+    },
+    {
+      path: "/contribute",
+      element: <Contribute />,
+      errorElement: <ErrorMsg />
+    }]
+  },
+  {
+    element: <Books />,
+    path: "/books",
+    errorElement: <ErrorMsg />
+  },
+  {
+    element: <BookDetails />,
+    path: "/books/:id",
+    errorElement: <ErrorMsg />
+  },
+  {
+    element: <Profile />,
+    path: "/user",
+    errorElement: <ErrorMsg />
+  },
+  {
+    path: "*",
+    element: <ErrorMsg message="404 Not Found - The page you're looking for doesn't exist." />,
+  },
+
+])
 
 function App() {
 
 
 
-  const [completedBooks, setCompletedBooks] = useState([]);
-  const [favoriteBooks, setFavoriteBooks] = useState([]);
-
-
-  // Add book to favorite list
-  const handleToggleFavoriteBook = (book) => {
-    const isFavorite = favoriteBooks.some(b => b.id === book.id);
-
-    let updatedFavoriteBooks;
-    if (isFavorite) {
-      updatedFavoriteBooks = favoriteBooks.filter(b => b.id !== book.id);
-    } else {
-      updatedFavoriteBooks = [...favoriteBooks, book];
-    }
-
-    setFavoriteBooks(updatedFavoriteBooks);
-    localStorage.setItem('favoriteBooks', JSON.stringify(updatedFavoriteBooks));
-  };
 
 
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<Homepage />} />
-        <Route path="overview" element={<Overview />} />
-        <Route path="about" element={<About />} />
-        <Route path="contribute" element={<Contribute />} />
-        <Route path="books" element={<Books
-          completedBooks={completedBooks}
-          favoriteBooks={favoriteBooks}
-          setCompletedBooks={setCompletedBooks}
-          setFavoriteBooks={setFavoriteBooks}
-        />} />
-        <Route path="books/:id" element={<BookDetails
-          favoriteBooks={favoriteBooks}
-          onAddFavorite={handleToggleFavoriteBook}
-        />} />
-        <Route path="user" element={<Profile
-          completedBooks={completedBooks}
-          favoriteBooks={favoriteBooks}
-          setCompletedBooks={setCompletedBooks}
-          setFavoriteBooks={setFavoriteBooks}
-        />} />
-      </Routes>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
+      <BooksProvider>
+        <RouterProvider router={router} />
+      </BooksProvider>
+    </QueryClientProvider>
   )
 }
 

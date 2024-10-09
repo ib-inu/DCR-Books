@@ -1,0 +1,139 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #161616;
+  padding: 5px 20px;
+}
+.userIcon {
+  cursor: pointer;
+  transform: translateY(22px);
+  color: aliceblue;
+}
+.backArrow {
+  cursor: pointer;
+  transform: translateY(22px);
+  font-size: 28px;
+}
+.icon {
+  padding: 10px;
+}
+.icon p {
+  color: #c1c1c1;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.detailsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 25px;
+  color: #babfbf;
+  font-family: "SUSE", sans-serif;
+}
+
+.detailPage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  background-color: #232a2dd0;
+}
+.detailPage p {
+  margin: 0;
+}
+
+.bookImg {
+  position: relative;
+  text-align: center;
+}
+
+.bookImg img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+}
+
+.bookInfo {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #c9c9c9;
+  text-align: center;
+}
+.bookInfo h2 {
+  margin-top: 20px;
+}
+.bookInfo p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.description {
+  margin: 0 50px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 22px;
+}
+
+@media (max-width: 700px) {
+  .userIcon {
+    transform: translateY(16px);
+    font-size: 14px;
+  }
+  .backArrow {
+    cursor: pointer;
+    transform: translateY(14px);
+    font-size: 26px;
+  }
+}
+@media (max-width: 500px) {
+  .userIcon {
+    transform: translateY(10px);
+    font-size: 12px;
+  }
+  .backArrow {
+    cursor: pointer;
+    transform: translateY(10px);
+    font-size: 24px;
+  }
+  .description {
+    margin: 0 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 250px) {
+  .userIcon {
+    transform: translateY(8px);
+    font-size: 8px;
+  }
+  .backArrow {
+    cursor: pointer;
+    transform: translateY(8px);
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 630px) {
+  .detailPage {
+    gap: 10px;
+  }
+
+  .bookImg img {
+    max-width: 50%;
+  }
+
+  .bookImg button {
+    top: 5px;
+    left: 5px;
+  }
+}

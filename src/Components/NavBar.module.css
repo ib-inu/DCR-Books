@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.nav {
+  display: flex;
+  background-color: #161616;
+  padding: 0 20px;
+  justify-content: space-between;
+  z-index: 100;
+  box-shadow: 1px 1px 10px black;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  width: 100%;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  padding: 10px 0;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.navLinks li {
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.navLinks a:link,
+.navLinks a:visited {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  transition: all 0.2s;
+}
+.navLinks a:hover {
+  color: #ffe564;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropbtn {
+  display: none;
+  font-size: 22px;
+  border: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.dropdownContent {
+  left: auto;
+  right: 0;
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 101;
+  border-radius: 18px;
+}
+
+.dropdownContent a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s;
+}
+.dropdownContent a:global(.active) {
+  background-color: #000000;
+  border-radius: 12px;
+}
+.dropdownContent a:hover {
+  border-radius: 12px;
+  background-color: #ffe564;
+  color: black;
+}
+.dropdownContent a:hover:global(.active) {
+  border-radius: 12px;
+  background-color: black;
+  color: #ffe564;
+}
+.open {
+  display: block;
+}
+
+.nav a:global(.active) {
+  color: #ffe564;
+}
+
+@media (max-width: 700px) {
+  .navLinks {
+    display: none;
+  }
+  .dropbtn {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  .listContainer {
+    padding: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav {
+    padding-top: 10px;
+  }
+  .dropbtn {
+    font-size: 18px;
+    transform: translateY(-8px);
+  }
+}
+
+@media (min-width: 1100px) {
+  .navLinks li {
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+  .navLinks {
+    gap: 45px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .navLinks {
+    gap: 45px;
+    margin-right: 60px;
+  }
+}
