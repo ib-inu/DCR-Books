@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 
 export const AnimatedSection = ({ direction, children }) => {
     const { ref, inView } = useInView({
-        triggerOnce: true, // Ensures the animation only happens once
+        triggerOnce: true,
         threshold: 0.1,    // When 10% of the component is in view
     });
 
