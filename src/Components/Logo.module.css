@@ -1,49 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&display=swap");
-.logo {
-  display: flex;
+
+.logo span {
   cursor: pointer;
-  gap: 2px;
-  padding: 6px 0;
-  color: aliceblue;
-  text-decoration: none;
-}
-.icon {
-  color: #ffe564;
-  font-size: 50px;
-  transform: translateY(4px);
+  color: #d8cef0;
+  font-size: 2rem;
+  font-family: "satisfy", serif;
+  font-style: italic;
 }
 
-.name {
-  font-family: "Satisfy", cursive;
-  font-size: 2.5em;
-  font-weight: 900;
-}
-
-@media (max-width: 700px) {
-  .icon {
-    font-size: 40px;
-    transform: translateY(3px);
-  }
-  .name {
-    font-size: 2em;
-  }
-}
-
-@media (max-width: 500px) {
-  .icon {
-    font-size: 30px;
-    transform: translateY(2px);
-  }
-  .name {
-    font-size: 1.45em;
-  }
-}
-@media (max-width: 250px) {
-  .icon {
-    font-size: 20px;
-    transform: translateY(2px);
-  }
-  .name {
-    font-size: 1em;
-  }
+.logo {
+  margin-top: 10px;
 }

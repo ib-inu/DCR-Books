@@ -11,23 +11,48 @@ export function BasicSelect({ value, setValue }) {
     };
 
     return (
-        <Box >
-            <FormControl >
+        <Box>
+            <FormControl>
                 <Select
                     sx={{
-                        bgcolor: "white",
+                        bgcolor: "#d8cef0",
                         minWidth: 80,
-                        height: 40
+                        height: 40,
+                        "&:focus": {
+                            outline: "none",
+                        },
+                        "& .MuiOutlinedInput-notchedOutline": {
+                            border: "none",
+                        },
                     }}
                     value={value}
                     onChange={handleChange}
                     displayEmpty
                     inputProps={{ 'aria-label': 'Without label' }}
+                    MenuProps={{
+                        PaperProps: {
+                            sx: {
+                                bgcolor: "#f0e4ff",
+
+                            },
+                        },
+                    }}
                 >
-                    <MenuItem value="all">All</MenuItem>
-                    <MenuItem value="favorite">Favorite</MenuItem>
+                    <MenuItem
+                        sx={{ bgcolor: "#f0e4ff", "&:hover": { bgcolor: "#e0cfff" } }}
+                        value="all"
+                    >
+                        All
+                    </MenuItem>
+                    <MenuItem
+                        sx={{ bgcolor: "#f0e4ff", "&:hover": { bgcolor: "#e0cfff" } }}
+                        value="favorite"
+                    >
+                        Favorite
+                    </MenuItem>
                 </Select>
             </FormControl>
-        </Box >
+        </Box>
+
     );
 }

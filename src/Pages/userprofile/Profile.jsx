@@ -52,7 +52,7 @@ function Profile() {
         <div>
             <nav className={styles.nav}>
                 <div className={styles.backArrow} onClick={() => navigate(-1)}>
-                    <FontAwesomeIcon icon={faArrowLeft} color="white" />
+                    <FontAwesomeIcon icon={faArrowLeft} color="inherit" />
                 </div>
                 <Logo />
                 <div></div>

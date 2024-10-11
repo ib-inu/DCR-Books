@@ -1,9 +1,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  background-color: #161616;
   padding: 0 30px;
-  box-shadow: 0px 2px 10px rgb(34, 32, 5);
 }
 
 .backArrow {

@@ -1,4 +1,3 @@
-import Logo from "../../Components/Logo"
 import styles from './Books.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -10,8 +9,16 @@ import { useState } from "react";
 import { useBooksContext } from "../../context/BooksContext";
 import ModalConfirm from "../../lib/ModalConfirm";
 import ErrorMsg from "../../ErrorMsg";
+import { spiral } from 'ldrs'
+spiral.register()
+
+
+
+
+
 
 function Books() {
+
 
     const [query, setQuery] = useState('');
     const { searchQuery, handleAddCompletedBook, setSearchQuery, selectedBook } = useBooksContext();
@@ -56,32 +63,39 @@ function Books() {
                 btn2Color="warning"
                 onConfirm={(e) => handleAddCompletedBook(e, selectedBook)} />
             <nav className={styles.nav}>
-                <Logo />
-
+                <form onSubmit={(e) => handleSearch(e)} className={styles.searchBar}>
+                    <div className={styles.inputWrapper}>
+                        <FontAwesomeIcon
+                            className={styles.searchIcon}
+                            icon={faSearch}
+                            color='#acacaced'
+                        />
+                        <input
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            type="search"
+                            placeholder="search..."
+                        />
+                    </div>
+                </form>
                 <div className={styles.userIcon} onClick={() => Navigate("/user")} >
                     <FontAwesomeIcon icon={faUser} size="2x" />
                 </div>
             </nav >
 
-            <form onSubmit={(e) => handleSearch(e)} className={styles.searchBar}>
-                <input
-                    value={query}
-                    onChange={e => setQuery(e.target.value)}
-                    type="search" placeholder="search" />
-                <button>
-                    <FontAwesomeIcon icon={faSearch} color="#22282b" />
-                </button>
-            </form>
+
 
             <div className={styles.content}>
 
-                {!query && !books?.length &&
+                {!query && !books?.length && !isLoading &&
                     <div className={styles.welcome}>
-                        <p className={styles.message}>*start tracking📖*</p>
+                        <p><i>find book...</i></p>
                     </div>
                 }
 
+
                 {isLoading && <Loader />}
+
 
                 {!isLoading && !error && currentBooks?.map(book => <Book book={book} key={book.etag} />
                 )

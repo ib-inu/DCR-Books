@@ -1,14 +1,19 @@
 .btnAdd {
   width: 100%;
   border-radius: 12px;
-  background-color: #ceaf15;
   border: none;
   font-size: 1em;
   height: 30px;
-  font-weight: 900;
-  transition: all 0.3s;
+  background-color: rgb(113, 16, 118);
+  color: #ffffff;
   cursor: pointer;
+  transition: background-color 1s ease;
 }
 .btnAdd:hover {
-  background-color: #ceaf15b5;
+  background-color: rgb(143, 53, 148);
+}
+
+.btnAdd:active {
+  border: none;
+  outline: none;
 }

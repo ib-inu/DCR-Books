@@ -1,30 +1,44 @@
 .section {
-  padding-top: 20vh;
+  padding-top: 20px;
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   animation: textAnimation 1s ease-in;
-  margin: 0 15vw;
+  margin: 70px 15vw;
+  overflow: hidden;
 }
 
 .text {
+  max-width: 900px;
   font-size: 3rem;
+  margin-bottom: 40px;
   text-align: center;
-  color: #e5e5e5;
+  font-weight: 300;
   font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 1230px) {
+  .text {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 700px) {
   .text {
     font-size: 2rem;
+    margin-bottom: 20px;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 510px) {
   .text {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  .section {
+    margin-top: 20px;
   }
 }
 

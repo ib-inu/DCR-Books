@@ -9,6 +9,7 @@ import AddBtn from "../../Components/AddBtn";
 import ModalRemove from "../../lib/ModalRemove";
 import ModalConfirm from "../../lib/ModalConfirm";
 import toast from "react-hot-toast";
+import { AnimatedSection } from "../../lib/AnimatedSection";
 
 
 function BookDetails() {
@@ -37,7 +38,7 @@ function BookDetails() {
     return (
         <>
             <nav className={styles.nav}>
-                <div className={styles.backArrow} onClick={() => Navigate(-1)}> <FontAwesomeIcon icon={faArrowLeft} color="white" /></div>
+                <div className={styles.backArrow} onClick={() => Navigate(-1)}> <FontAwesomeIcon icon={faArrowLeft} color="inherit" /></div>
                 <Logo />
 
                 <div className={styles.userIcon}
@@ -46,57 +47,61 @@ function BookDetails() {
                 </div>
             </nav>
 
-            <div className={styles.detailsContainer}>
-                <ModalRemove
-                    btn1Color="neutral"
-                    btn2Color="danger"
-                    text="remove from favorite?"
-                    onConfirm={(e) => handleDelete(e, book)} />
+            <AnimatedSection direction="top">
 
-                <ModalConfirm text="Add to read?"
-                    btn1Color="neutral"
-                    btn2Color="warning"
-                    onConfirm={(e) => handleAddCompletedBook(e, book)} />
+                <div className={styles.detailsContainer}>
+                    <ModalRemove
+                        btn1Color="neutral"
+                        btn2Color="danger"
+                        text="remove from favorite?"
+                        onConfirm={(e) => handleDelete(e, book)} />
 
-
-                <div className={styles.detailPage}>
-                    <div className={styles
-                        .icon
-                    }>
-                        <p>{completed &&
-                            (favorite ? "favorite" : "add to favorite")
-                        }
-                        </p>
+                    <ModalConfirm text="Add to read?"
+                        btn1Color="neutral"
+                        btn2Color="warning"
+                        onConfirm={(e) => handleAddCompletedBook(e, book)} />
 
 
-
-                        {completed &&
-                            <FavoriteBtn book={book} />}
-                    </div>
-                    <div className={styles.bookImg}>
+                    <div className={styles.detailPage}>
+                        <div className={styles
+                            .icon
+                        }>
+                            <p>{completed &&
+                                (favorite ? "favorite" : "add to favorite")
+                            }
+                            </p>
 
 
 
-                        <img src={book?.volumeInfo?.imageLinks?.thumbnail || "/images/not-avail-img.png"} alt={book.volumeInfo.title} />
-                    </div>
-
-                    <div className={styles.bookInfo}>
-                        {!completed && <AddBtn text="add" book={book} />}
-                        <h2>{book.volumeInfo.title || "Unknown"}</h2>
-                        <p><strong>Authors:</strong> {book.volumeInfo.authors?.join(', ') || "not available"}</p>
-                        <p><strong>Published Date:</strong> {book.volumeInfo?.publishedDate || "not available"}</p>
-
-                        {book.volumeInfo.pageCount > 0 && <p>pages :{book.volumeInfo.pageCount || "not available"}</p>}
-                    </div>
+                            {completed &&
+                                <FavoriteBtn book={book} />}
+                        </div>
+                        <div className={styles.bookImg}>
 
 
-                    <div className={styles.description}>
-                        <p><strong>Description:</strong> {book.volumeInfo?.description || "not available"}</p>
+
+                            <img src={book?.volumeInfo?.imageLinks?.thumbnail || "/images/not-avail-img.png"} alt={book.volumeInfo.title} />
+                        </div>
+
+                        <div className={styles.bookInfo}>
+                            {!completed && <AddBtn text="add" book={book} />}
+                            <h2>{book.volumeInfo.title || "Unknown"}</h2>
+                            <p><strong>Authors:</strong> {book.volumeInfo.authors?.join(', ') || "not available"}</p>
+                            <p><strong>Published Date:</strong> {book.volumeInfo?.publishedDate || "not available"}</p>
+
+                            {book.volumeInfo.pageCount > 0 && <p>pages :{book.volumeInfo.pageCount || "not available"}</p>}
+                        </div>
+
+
+                        <div className={styles.description}>
+                            <p><strong>Description:</strong> {book.volumeInfo?.description || "not available"}</p>
+                        </div>
+
                     </div>
 
                 </div>
+            </AnimatedSection>
 
-            </div>
         </>
 
     );

@@ -31,8 +31,8 @@ function ModalRemove({ onConfirm, text, btn1Color, btn2Color }) {
                 sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             >
                 <Sheet
-                    variant="outlined"
-                    sx={{ maxWidth: 500, borderRadius: 'md', p: 3, boxShadow: 'lg' }}
+                    variant="outline"
+                    sx={{ maxWidth: 500, borderRadius: 'md', p: 3, boxShadow: 'lg', bgcolor: "rgb(42, 25, 43)", color: "#d8cef0" }}
                 >
                     <ModalClose variant="plain" sx={{ m: -1 }} />
                     <Typography

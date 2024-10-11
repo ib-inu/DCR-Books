@@ -8,14 +8,20 @@
   height: auto;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
-  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(111, 33, 115, 1) 0%,
+    rgba(18, 21, 83, 1) 86%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  color: #d8cef0;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-position 1s ease;
 }
 
 .button:hover {
-  background-color: #0056b3;
+  background-position: 100% 0%;
 }
 
 @media (max-width: 700px) {

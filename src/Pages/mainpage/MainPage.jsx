@@ -6,9 +6,6 @@ function MainPage() {
     return (
         <div className={styles.container}>
             <NavBar />
-            <div
-                className={styles.background}
-            />
             <div className={styles.content}>
                 <Outlet />
             </div>

@@ -11,7 +11,7 @@ function BookCard({ book }) {
     const { setRemoveModalOpen, setSelectedBook } = useBooksContext();
 
     const bookName = book?.volumeInfo?.title;
-    const displayName = bookName?.length > 18 ? `${bookName.slice(0, 16)}..` : bookName;
+    const displayName = bookName?.length > 22 ? `${bookName.slice(0, 20)}..` : bookName;
 
 
 
@@ -26,8 +26,15 @@ function BookCard({ book }) {
     return (
         <AnimatedSection direction="top">
 
-            <Card variant="smooth" sx={{
-                maxWidth: 320, bgcolor: '#16161677'
+            <Card variant="outlined" sx={{
+                maxWidth: 320,
+                minHeight: "350px",
+                maxHeight: "400px",
+                background: "rgba(100, 66, 154, 0.09)",
+                boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+                backdropFilter: "blur(2.4px)",
+                border: "1px solid rgba(100, 66, 154, 0.35)",
+                borderRadius: "16px",
             }}>
 
 
@@ -39,7 +46,7 @@ function BookCard({ book }) {
                             <img
                                 src={book?.volumeInfo?.imageLinks?.thumbnail || "/images/not-avail-img.png"}
                                 loading="lazy"
-                                alt=""
+                                alt="displayName"
                             />
                         </AspectRatio>
                     </Link>
@@ -57,7 +64,7 @@ function BookCard({ book }) {
                             right: '1rem',
                             top: 0,
                             transform: 'translateY(50%)',
-                            opacity: 0.6,
+                            opacity: 1,
                             color: '#fffefe'
                         }}
                     >

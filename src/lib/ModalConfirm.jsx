@@ -31,10 +31,14 @@ function ModalConfirm({ onConfirm, text, btn1Color, btn2Color }) {
                 sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             >
                 <Sheet
-                    variant="outlined"
-                    sx={{ maxWidth: 500, borderRadius: 'md', p: 3, boxShadow: 'lg' }}
+                    variant="outline"
+                    sx={{ maxWidth: 500, borderRadius: 'md', p: 3, boxShadow: 'lg', bgcolor: "rgb(42, 25, 43)", color: "#d8cef0" }}
                 >
-                    <ModalClose variant="plain" sx={{ m: -1 }} />
+                    <ModalClose variant="plain" sx={{
+                        m: -1, ":hover": {
+                            bgcolor: "transparent"
+                        }
+                    }} />
                     <Typography
                         component="h2"
                         id="modal-title"
@@ -47,7 +51,7 @@ function ModalConfirm({ onConfirm, text, btn1Color, btn2Color }) {
                     <Typography id="modal-desc" textColor="text.tertiary">
                         <Button
                             color={btn1Color}
-                            sx={{ m: 2, mb: 0 }} onClick={handleCancelClick} >Cancel</Button>
+                            sx={{ m: 2, mb: 0, color: "#d8cef0" }} onClick={handleCancelClick} >Cancel</Button>
                         <Button
                             color={btn2Color}
                             disabled={false}

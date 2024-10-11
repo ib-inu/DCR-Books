@@ -29,7 +29,7 @@ function FavoriteBtn({ book }) {
 
 
     const [fav, setFav] = useState(false);
-    const { favoriteBooks, setConfirmModalOpen } = useBooksContext();
+    const { favoriteBooks } = useBooksContext();
 
     useEffect(() => {
         const isFav = favoriteBooks?.some?.(f => f.id === book.id);

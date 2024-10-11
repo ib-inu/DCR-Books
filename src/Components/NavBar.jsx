@@ -19,21 +19,15 @@ function NavBar() {
             <div className={styles.listContainer}>
 
                 <ul className={styles.navLinks}>
-                    <li>
-                        <NavLink to="/overview" >
-                            Overview
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/about" >
-                            About
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/contribute">
-                            Contribute&#10132;
-                        </NavLink>
-                    </li>
+                    <NavLink to="/overview" >
+                        Overview
+                    </NavLink>
+                    <NavLink to="/about" >
+                        About
+                    </NavLink>
+                    <NavLink to="/contribute">
+                        Contribute
+                    </NavLink>
                 </ul>
                 <div className={styles.dropdown}>
                     <button onClick={toggleMenu} className={styles.dropbtn}>
