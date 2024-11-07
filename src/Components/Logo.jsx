@@ -10,7 +10,6 @@ function Logo() {
         }}>
             <div className={styles.logo}>
                 <span className={styles.icon}>
-                    {/* <img src='/DCR_books_logo_transparent.png' /> */}
                     DCR
                 </span>
             </div>

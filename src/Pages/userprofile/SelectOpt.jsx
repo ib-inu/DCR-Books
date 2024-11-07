@@ -16,8 +16,8 @@ export function BasicSelect({ value, setValue }) {
                 <Select
                     sx={{
                         bgcolor: "#d8cef0",
-                        minWidth: 80,
-                        height: 40,
+                        minWidth: 70,
+                        height: 25,
                         "&:focus": {
                             outline: "none",
                         },

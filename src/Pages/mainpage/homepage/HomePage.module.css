@@ -8,6 +8,7 @@
   animation: textAnimation 1s ease-in;
   margin: 70px 15vw;
   overflow: hidden;
+  margin-top: 8vw;
 }
 
 .text {

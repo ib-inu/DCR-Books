@@ -7,7 +7,7 @@ function Overview() {
     return (
         <main className={styles.page}>
             <section className={styles.section}>
-                <AnimatedSection>
+                <AnimatedSection direction="top">
 
                     <div className={styles.introduction}>
                         <p>
@@ -19,39 +19,35 @@ function Overview() {
 
                 <section className={styles.overview}>
 
-                    <div>
-                        <h2>
-                            What is BookTracker?
-                        </h2>
-                        <AnimatedSection direction="top">
+                    <AnimatedSection direction="top">
+                        <div>
+                            <h2>
+                                What is BookTracker?
+                            </h2>
                             <p>
                                 BookTracker is designed for book lovers who want to keep a comprehensive record of their reading history. With our platform, you can easily:
                             </p>
-                        </AnimatedSection>
-                    </div>
+                        </div>
+                    </AnimatedSection>
 
 
                     <div>
-                        <h2>Features</h2>
-                        <ul>
-                            <AnimatedSection direction="top">
+                        <AnimatedSection direction="top">
+                            <h2>Features</h2>
+                            <ul>
                                 <li>
                                     <span>Track Your Reading Progress:</span> Log the books you&apos;ve completed, are currently reading, or plan to read in the future.
                                 </li>
-                            </AnimatedSection>
 
-                            <AnimatedSection direction="top">
                                 <li>
 
                                     <span> Curate Your Favorites:</span> Highlight your favorite reads and share them with others, showcasing the books that have had the most impact on you.
                                 </li>
-                            </AnimatedSection>
-                            <AnimatedSection direction="top">
                                 <li>
                                     <span>No Signup Required:</span> We believe in simplicity and ease of use. That&apos;s why BookTracker is completely accessible without the need for an account. Just start using it, and keep your reading journey organized effortlessly.
                                 </li>
-                            </AnimatedSection>
-                        </ul>
+                            </ul>
+                        </AnimatedSection>
                     </div>
 
                     <div>
@@ -97,10 +93,10 @@ function Overview() {
 
                 <div className={styles.getStarted}>
 
-                    <h2>
-                        Get Started
-                    </h2>
                     <AnimatedSection direction="left">
+                        <h2>
+                            Get Started
+                        </h2>
                         <p>
                             Ready to dive in? Start tracking your books today and see how easy it is to organize your literary adventures with BookTracker. Explore our features, and you&apos;ll never lose track of your reading journey again.
                         </p>

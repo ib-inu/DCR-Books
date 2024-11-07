@@ -79,7 +79,7 @@ function Books() {
                     </div>
                 </form>
                 <div className={styles.userIcon} onClick={() => Navigate("/user")} >
-                    <FontAwesomeIcon icon={faUser} size="2x" />
+                    <FontAwesomeIcon icon={faUser} />
                 </div>
             </nav >
 
@@ -106,10 +106,10 @@ function Books() {
                     {books?.length >= 1 && !error && !isLoading && (
                         <>
                             {page > 1 && (
-                                <button onClick={handlePrevPage}>prev&larr;</button>
+                                <button onClick={handlePrevPage}>&larr;  prev</button>
                             )}
                             {page <= 1 && (
-                                <button onClick={handleNextPage}>&rarr;next</button>
+                                <button onClick={handleNextPage}>next &rarr;</button>
                             )}
                         </>
                     )}

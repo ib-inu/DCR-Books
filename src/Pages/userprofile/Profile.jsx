@@ -2,7 +2,6 @@ import styles from './Profile.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useBooksContext } from '../../context/BooksContext';
-import Logo from '../../Components/Logo';
 import { BasicSelect as SelectOpt } from './SelectOpt';
 import { useState } from 'react';
 import BookCard from './BookCard';
@@ -54,8 +53,6 @@ function Profile() {
                 <div className={styles.backArrow} onClick={() => navigate(-1)}>
                     <FontAwesomeIcon icon={faArrowLeft} color="inherit" />
                 </div>
-                <Logo />
-                <div></div>
             </nav>
 
             <ModalRemove onConfirm={(e) => handleRemove(e, selectedBook)} text="       confirm to remove book"

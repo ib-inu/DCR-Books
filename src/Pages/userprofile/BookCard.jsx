@@ -27,9 +27,11 @@ function BookCard({ book }) {
         <AnimatedSection direction="top">
 
             <Card variant="outlined" sx={{
-                maxWidth: 320,
-                minHeight: "350px",
-                maxHeight: "400px",
+                minHeight: {
+                    xs: "100px",
+                    sm: "300px",
+                    md: "400px"
+                },
                 background: "rgba(100, 66, 154, 0.09)",
                 boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
                 backdropFilter: "blur(2.4px)",
@@ -75,7 +77,7 @@ function BookCard({ book }) {
                 <div>
                     <h2 style={{
                         color: '#dfdfdfb6',
-                        fontSize: isSmallScreen ? '18px' : '24px'
+                        fontSize: isSmallScreen ? '18px' : '22px'
                     }} >
                         {displayName || "Unknown"}
                     </h2>

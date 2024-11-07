@@ -2,7 +2,7 @@
 
 .logo span {
   cursor: pointer;
-  color: #d8cef0;
+  color: #b3a2db;
   font-size: 2rem;
   font-family: "satisfy", serif;
   font-style: italic;
@@ -10,4 +10,10 @@
 
 .logo {
   margin-top: 10px;
+}
+
+@media (max-width: 450px) {
+  .logo span {
+    font-size: 1.6rem;
+  }
 }

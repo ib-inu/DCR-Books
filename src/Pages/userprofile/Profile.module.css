@@ -7,7 +7,7 @@
 .backArrow {
   cursor: pointer;
   transform: translateY(13px);
-  font-size: 28px;
+  font-size: 22px;
 }
 
 .container {
@@ -21,7 +21,7 @@
   width: 100%;
   text-align: center;
   color: rgba(255, 252, 240, 0.196);
-  font-size: 2em;
+  font-size: clamp(16px, 3vw, 2em);
 }
 .empty p {
   font-style: italic;
@@ -30,10 +30,16 @@
   margin-left: 75px;
 }
 
+@media (max-width: 600px) {
+  .empty {
+    margin-top: 2em;
+    margin-right: 2em;
+  }
+}
 @media (max-width: 500px) {
   .backArrow {
     transform: translateY(10px);
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 @media (max-width: 250px) {
