@@ -44,7 +44,7 @@ function ModalConfirm({ onConfirm, text, btn1Color, btn2Color }) {
                         id="modal-title"
                         level="h4"
                         textColor="inherit"
-                        sx={{ fontWeight: 'lg', mb: 1 }}
+                        sx={{ fontWeight: 'lg', mb: 1, textAlign: 'center' }}
                     >
                         {text}
                     </Typography>
