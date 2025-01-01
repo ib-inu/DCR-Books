@@ -34,7 +34,6 @@ function BookCard({ book }) {
                 },
                 background: "rgba(100, 66, 154, 0.09)",
                 boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-                backdropFilter: "blur(2.4px)",
                 border: "1px solid rgba(100, 66, 154, 0.35)",
                 borderRadius: "16px",
             }}>
