@@ -26,7 +26,7 @@ DCR-Books is a book tracking website that allows users to manage the books they 
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/DCR-Books.git
+   git clone https://github.com/ib-inu/DCR-Books.git
    cd DCR-Books
    ```
 
@@ -37,7 +37,7 @@ DCR-Books is a book tracking website that allows users to manage the books they 
 
 3. **Run the Application**:
    ```bash
-   npm start
+   npm run dev
    ```
 
 4. Open your browser and navigate to `http://localhost:3000` to use the application.
