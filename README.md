@@ -68,8 +68,7 @@ src/
 ## Future Enhancements
 - **Authentication**: Add user accounts for personalized libraries.
 - **Cloud Storage**: Sync data across devices using a backend.
-- **Enhanced Animations**: Incorporate more interactive animations.
-- **Dark Mode**: Provide a toggle for dark and light themes.
+- **Enhanced Animations**: Incorporate more interactive animations. 
 
 ## Contributing
 Contributions are welcome! Feel free to fork the repository and submit pull requests. If you have ideas for new features or improvements, don't hesitate to open an issue or contact the maintainer.
